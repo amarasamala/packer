@@ -1,0 +1,420 @@
+1534780947,,ui,say,==> amazon-ebs: Prevalidating AMI Name: packer-example 1534780946
+1534780950,,ui,message,    amazon-ebs: Found Image ID: ami-6871a115
+1534780950,,ui,say,==> amazon-ebs: Creating temporary keypair: packer_5b7ae613-d580-a719-4105-ca1e55b655dd
+1534780950,,ui,say,==> amazon-ebs: Creating temporary security group for this instance: packer_5b7ae616-e292-ad0f-03dc-4ff254ae8dc0
+1534780951,,ui,say,==> amazon-ebs: Authorizing access to port 22 from 0.0.0.0/0 in the temporary security group...
+1534780952,,ui,say,==> amazon-ebs: Launching a source AWS instance...
+1534780952,,ui,say,==> amazon-ebs: Adding tags to source instance
+1534780952,,ui,message,    amazon-ebs: Adding tag: "Name": "Packer Builder"
+1534780953,,ui,message,    amazon-ebs: Instance ID: i-0900628d6710f37c7
+1534780953,,ui,say,==> amazon-ebs: Waiting for instance (i-0900628d6710f37c7) to become ready...
+1534780987,,ui,say,==> amazon-ebs: Waiting for SSH to become available...
+1534780990,,ui,say,==> amazon-ebs: Connected to SSH!
+1534780990,,ui,say,==> amazon-ebs: Pausing 10s before the next provisioner...
+1534781000,,ui,say,==> amazon-ebs: Provisioning with shell script: scripts/install_software.sh
+1534781003,,ui,message,    amazon-ebs: Loaded plugins: amazon-id%!(PACKER_COMMA) rhui-lb%!(PACKER_COMMA) search-disabled-repos
+1534781014,,ui,message,    amazon-ebs: Resolving Dependencies
+1534781014,,ui,message,    amazon-ebs: --> Running transaction check
+1534781014,,ui,message,    amazon-ebs: ---> Package unzip.x86_64 0:6.0-19.el7 will be installed
+1534781014,,ui,message,    amazon-ebs: ---> Package wget.x86_64 0:1.14-15.el7_4.1 will be installed
+1534781015,,ui,message,    amazon-ebs: --> Finished Dependency Resolution
+1534781015,,ui,message,    amazon-ebs:
+1534781015,,ui,message,    amazon-ebs: Dependencies Resolved
+1534781015,,ui,message,    amazon-ebs:
+1534781015,,ui,message,    amazon-ebs: ================================================================================
+1534781015,,ui,message,    amazon-ebs:  Package Arch     Version              Repository                          Size
+1534781015,,ui,message,    amazon-ebs: ================================================================================
+1534781015,,ui,message,    amazon-ebs: Installing:
+1534781015,,ui,message,    amazon-ebs:  unzip   x86_64   6.0-19.el7           rhui-REGION-rhel-server-releases   170 k
+1534781015,,ui,message,    amazon-ebs:  wget    x86_64   1.14-15.el7_4.1      rhui-REGION-rhel-server-releases   547 k
+1534781015,,ui,message,    amazon-ebs:
+1534781015,,ui,message,    amazon-ebs: Transaction Summary
+1534781015,,ui,message,    amazon-ebs: ================================================================================
+1534781015,,ui,message,    amazon-ebs: Install  2 Packages
+1534781015,,ui,message,    amazon-ebs:
+1534781015,,ui,message,    amazon-ebs: Total download size: 717 k
+1534781015,,ui,message,    amazon-ebs: Installed size: 2.3 M
+1534781015,,ui,message,    amazon-ebs: Downloading packages:
+1534781015,,ui,message,    amazon-ebs: --------------------------------------------------------------------------------
+1534781016,,ui,message,    amazon-ebs: Total                                              2.9 MB/s | 717 kB  00:00
+1534781016,,ui,message,    amazon-ebs: Running transaction check
+1534781016,,ui,message,    amazon-ebs: Running transaction test
+1534781016,,ui,message,    amazon-ebs: Transaction test succeeded
+1534781016,,ui,message,    amazon-ebs: Running transaction
+1534781016,,ui,message,    amazon-ebs:   Installing : unzip-6.0-19.el7.x86_64                                      1/2
+1534781016,,ui,message,    amazon-ebs:   Installing : wget-1.14-15.el7_4.1.x86_64                                  2/2
+1534781016,,ui,message,    amazon-ebs:   Verifying  : wget-1.14-15.el7_4.1.x86_64                                  1/2
+1534781016,,ui,message,    amazon-ebs:   Verifying  : unzip-6.0-19.el7.x86_64                                      2/2
+1534781016,,ui,message,    amazon-ebs:
+1534781016,,ui,message,    amazon-ebs: Installed:
+1534781016,,ui,message,    amazon-ebs:   unzip.x86_64 0:6.0-19.el7            wget.x86_64 0:1.14-15.el7_4.1
+1534781016,,ui,message,    amazon-ebs:
+1534781016,,ui,message,    amazon-ebs: Complete!
+1534781016,,ui,message,    amazon-ebs: Loaded plugins: amazon-id%!(PACKER_COMMA) rhui-lb%!(PACKER_COMMA) search-disabled-repos
+1534781016,,ui,message,    amazon-ebs: Resolving Dependencies
+1534781016,,ui,message,    amazon-ebs: --> Running transaction check
+1534781016,,ui,message,    amazon-ebs: ---> Package httpd.x86_64 0:2.4.6-80.el7_5.1 will be installed
+1534781016,,ui,message,    amazon-ebs: --> Processing Dependency: httpd-tools = 2.4.6-80.el7_5.1 for package: httpd-2.4.6-80.el7_5.1.x86_64
+1534781016,,ui,message,    amazon-ebs: --> Processing Dependency: system-logos >= 7.92.1-1 for package: httpd-2.4.6-80.el7_5.1.x86_64
+1534781017,,ui,message,    amazon-ebs: --> Processing Dependency: /etc/mime.types for package: httpd-2.4.6-80.el7_5.1.x86_64
+1534781017,,ui,message,    amazon-ebs: --> Processing Dependency: libapr-1.so.0()(64bit) for package: httpd-2.4.6-80.el7_5.1.x86_64
+1534781017,,ui,message,    amazon-ebs: --> Processing Dependency: libaprutil-1.so.0()(64bit) for package: httpd-2.4.6-80.el7_5.1.x86_64
+1534781017,,ui,message,    amazon-ebs: --> Running transaction check
+1534781017,,ui,message,    amazon-ebs: ---> Package apr.x86_64 0:1.4.8-3.el7_4.1 will be installed
+1534781017,,ui,message,    amazon-ebs: ---> Package apr-util.x86_64 0:1.5.2-6.el7 will be installed
+1534781017,,ui,message,    amazon-ebs: ---> Package httpd-tools.x86_64 0:2.4.6-80.el7_5.1 will be installed
+1534781017,,ui,message,    amazon-ebs: ---> Package mailcap.noarch 0:2.1.41-2.el7 will be installed
+1534781017,,ui,message,    amazon-ebs: ---> Package redhat-logos.noarch 0:70.0.3-6.el7 will be installed
+1534781017,,ui,message,    amazon-ebs: --> Finished Dependency Resolution
+1534781017,,ui,message,    amazon-ebs:
+1534781017,,ui,message,    amazon-ebs: Dependencies Resolved
+1534781017,,ui,message,    amazon-ebs:
+1534781017,,ui,message,    amazon-ebs: ================================================================================
+1534781017,,ui,message,    amazon-ebs:  Package      Arch   Version             Repository                        Size
+1534781017,,ui,message,    amazon-ebs: ================================================================================
+1534781017,,ui,message,    amazon-ebs: Installing:
+1534781017,,ui,message,    amazon-ebs:  httpd        x86_64 2.4.6-80.el7_5.1    rhui-REGION-rhel-server-releases 1.2 M
+1534781017,,ui,message,    amazon-ebs: Installing for dependencies:
+1534781017,,ui,message,    amazon-ebs:  apr          x86_64 1.4.8-3.el7_4.1     rhui-REGION-rhel-server-releases 103 k
+1534781017,,ui,message,    amazon-ebs:  apr-util     x86_64 1.5.2-6.el7         rhui-REGION-rhel-server-releases  92 k
+1534781017,,ui,message,    amazon-ebs:  httpd-tools  x86_64 2.4.6-80.el7_5.1    rhui-REGION-rhel-server-releases  89 k
+1534781017,,ui,message,    amazon-ebs:  mailcap      noarch 2.1.41-2.el7        rhui-REGION-rhel-server-releases  31 k
+1534781017,,ui,message,    amazon-ebs:  redhat-logos noarch 70.0.3-6.el7        rhui-REGION-rhel-server-releases  13 M
+1534781017,,ui,message,    amazon-ebs:
+1534781017,,ui,message,    amazon-ebs: Transaction Summary
+1534781017,,ui,message,    amazon-ebs: ================================================================================
+1534781017,,ui,message,    amazon-ebs: Install  1 Package (+5 Dependent packages)
+1534781017,,ui,message,    amazon-ebs:
+1534781017,,ui,message,    amazon-ebs: Total download size: 14 M
+1534781017,,ui,message,    amazon-ebs: Installed size: 18 M
+1534781017,,ui,message,    amazon-ebs: Downloading packages:
+1534781018,,ui,message,    amazon-ebs: --------------------------------------------------------------------------------
+1534781018,,ui,message,    amazon-ebs: Total                                               25 MB/s |  14 MB  00:00
+1534781018,,ui,message,    amazon-ebs: Running transaction check
+1534781018,,ui,message,    amazon-ebs: Running transaction test
+1534781018,,ui,message,    amazon-ebs: Transaction test succeeded
+1534781018,,ui,message,    amazon-ebs: Running transaction
+1534781018,,ui,message,    amazon-ebs:   Installing : apr-1.4.8-3.el7_4.1.x86_64                                   1/6
+1534781018,,ui,message,    amazon-ebs:   Installing : apr-util-1.5.2-6.el7.x86_64                                  2/6
+1534781018,,ui,message,    amazon-ebs:   Installing : httpd-tools-2.4.6-80.el7_5.1.x86_64                          3/6
+1534781018,,ui,message,    amazon-ebs:   Installing : mailcap-2.1.41-2.el7.noarch                                  4/6
+1534781019,,ui,message,    amazon-ebs:   Installing : redhat-logos-70.0.3-6.el7.noarch                             5/6
+1534781019,,ui,message,    amazon-ebs:   Installing : httpd-2.4.6-80.el7_5.1.x86_64                                6/6
+1534781019,,ui,message,    amazon-ebs:   Verifying  : redhat-logos-70.0.3-6.el7.noarch                             1/6
+1534781019,,ui,message,    amazon-ebs:   Verifying  : mailcap-2.1.41-2.el7.noarch                                  2/6
+1534781019,,ui,message,    amazon-ebs:   Verifying  : httpd-2.4.6-80.el7_5.1.x86_64                                3/6
+1534781019,,ui,message,    amazon-ebs:   Verifying  : apr-util-1.5.2-6.el7.x86_64                                  4/6
+1534781019,,ui,message,    amazon-ebs: --2018-08-20 16:03:38--  https://github.com/BlackrockDigital/startbootstrap-coming-soon/archive/gh-pages.zip
+1534781019,,ui,message,    amazon-ebs:   Verifying  : httpd-tools-2.4.6-80.el7_5.1.x86_64                          5/6
+1534781019,,ui,message,    amazon-ebs: Resolving github.com (github.com)... 192.30.253.113%!(PACKER_COMMA) 192.30.253.112
+1534781019,,ui,message,    amazon-ebs:   Verifying  : apr-1.4.8-3.el7_4.1.x86_64                                   6/6
+1534781019,,ui,message,    amazon-ebs:
+1534781020,,ui,message,    amazon-ebs: Connecting to github.com (github.com)|192.30.253.113|:443... connected.
+1534781020,,ui,message,    amazon-ebs: Installed:
+1534781020,,ui,message,    amazon-ebs: HTTP request sent%!(PACKER_COMMA) awaiting response... 302 Found
+1534781020,,ui,message,    amazon-ebs:   httpd.x86_64 0:2.4.6-80.el7_5.1
+1534781020,,ui,message,    amazon-ebs: Location: https://codeload.github.com/BlackrockDigital/startbootstrap-coming-soon/zip/gh-pages [following]
+1534781020,,ui,message,    amazon-ebs: --2018-08-20 16:03:38--  https://codeload.github.com/BlackrockDigital/startbootstrap-coming-soon/zip/gh-pages
+1534781020,,ui,message,    amazon-ebs:
+1534781020,,ui,message,    amazon-ebs: Resolving codeload.github.com (codeload.github.com)... 192.30.253.121%!(PACKER_COMMA) 192.30.253.120
+1534781020,,ui,message,    amazon-ebs: Connecting to codeload.github.com (codeload.github.com)|192.30.253.121|:443... connected.
+1534781020,,ui,message,    amazon-ebs: Dependency Installed:
+1534781020,,ui,message,    amazon-ebs:   apr.x86_64 0:1.4.8-3.el7_4.1               apr-util.x86_64 0:1.5.2-6.el7
+1534781020,,ui,message,    amazon-ebs:   httpd-tools.x86_64 0:2.4.6-80.el7_5.1      mailcap.noarch 0:2.1.41-2.el7
+1534781020,,ui,message,    amazon-ebs: HTTP request sent%!(PACKER_COMMA) awaiting response... 200 OK
+1534781020,,ui,message,    amazon-ebs:   redhat-logos.noarch 0:70.0.3-6.el7
+1534781020,,ui,message,    amazon-ebs:
+1534781020,,ui,message,    amazon-ebs: Complete!
+1534781020,,ui,message,    amazon-ebs: Length: 8846282 (8.4M) [application/zip]
+1534781020,,ui,message,    amazon-ebs: Saving to: ‘gh-pages.zip’
+1534781020,,ui,message,    amazon-ebs:
+1534781020,,ui,message,    amazon-ebs:      0K .......... .......... .......... .......... ..........  0% 31.2M 0s
+1534781020,,ui,message,    amazon-ebs:     50K .......... .......... .......... .......... ..........  1% 38.3M 0s
+1534781020,,ui,message,    amazon-ebs:    100K .......... .......... .......... .......... ..........  1% 27.7M 0s
+1534781020,,ui,message,    amazon-ebs:    150K .......... .......... .......... .......... ..........  2% 29.6M 0s
+1534781020,,ui,message,    amazon-ebs:    200K .......... .......... .......... .......... ..........  2% 37.0M 0s
+1534781020,,ui,message,    amazon-ebs:    250K .......... .......... .......... .......... ..........  3% 43.6M 0s
+1534781020,,ui,message,    amazon-ebs:    300K .......... .......... .......... .......... ..........  4% 32.8M 0s
+1534781020,,ui,message,    amazon-ebs:    350K .......... .......... .......... .......... ..........  4% 39.8M 0s
+1534781020,,ui,message,    amazon-ebs:    400K .......... .......... .......... .......... ..........  5% 40.8M 0s
+1534781020,,ui,message,    amazon-ebs:    450K .......... .......... .......... .......... ..........  5% 46.0M 0s
+1534781020,,ui,message,    amazon-ebs:    500K .......... .......... .......... .......... ..........  6% 41.9M 0s
+1534781020,,ui,message,    amazon-ebs:    550K .......... .......... .......... .......... ..........  6% 50.2M 0s
+1534781020,,ui,message,    amazon-ebs:    600K .......... .......... .......... .......... ..........  7% 44.8M 0s
+1534781020,,ui,message,    amazon-ebs:    650K .......... .......... .......... .......... ..........  8% 36.9M 0s
+1534781020,,ui,message,    amazon-ebs:    700K .......... .......... .......... .......... ..........  8% 49.5M 0s
+1534781020,,ui,message,    amazon-ebs:    750K .......... .......... .......... .......... ..........  9% 66.3M 0s
+1534781020,,ui,message,    amazon-ebs:    800K .......... .......... .......... .......... ..........  9% 49.5M 0s
+1534781020,,ui,message,    amazon-ebs:    850K .......... .......... .......... .......... .......... 10% 55.3M 0s
+1534781020,,ui,message,    amazon-ebs:    900K .......... .......... .......... .......... .......... 10% 47.8M 0s
+1534781020,,ui,message,    amazon-ebs:    950K .......... .......... .......... .......... .......... 11% 57.8M 0s
+1534781020,,ui,message,    amazon-ebs:   1000K .......... .......... .......... .......... .......... 12% 69.4M 0s
+1534781020,,ui,message,    amazon-ebs:   1050K .......... .......... .......... .......... .......... 12% 64.8M 0s
+1534781020,,ui,message,    amazon-ebs:   1100K .......... .......... .......... .......... .......... 13% 57.0M 0s
+1534781020,,ui,message,    amazon-ebs:   1150K .......... .......... .......... .......... .......... 13% 54.1M 0s
+1534781020,,ui,message,    amazon-ebs:   1200K .......... .......... .......... .......... .......... 14% 67.5M 0s
+1534781020,,ui,message,    amazon-ebs:   1250K .......... .......... .......... .......... .......... 15% 60.6M 0s
+1534781020,,ui,message,    amazon-ebs:   1300K .......... .......... .......... .......... .......... 15% 59.2M 0s
+1534781020,,ui,message,    amazon-ebs:   1350K .......... .......... .......... .......... .......... 16% 66.5M 0s
+1534781020,,ui,message,    amazon-ebs:   1400K .......... .......... .......... .......... .......... 16% 66.3M 0s
+1534781020,,ui,message,    amazon-ebs:   1450K .......... .......... .......... .......... .......... 17% 73.4M 0s
+1534781021,,ui,message,    amazon-ebs:   1500K .......... .......... .......... .......... .......... 17% 52.8M 0s
+1534781021,,ui,message,    amazon-ebs:   1550K .......... .......... .......... .......... .......... 18% 69.0M 0s
+1534781021,,ui,message,    amazon-ebs:   1600K .......... .......... .......... .......... .......... 19% 68.4M 0s
+1534781021,,ui,message,    amazon-ebs:   1650K .......... .......... .......... .......... .......... 19% 64.5M 0s
+1534781021,,ui,message,    amazon-ebs:   1700K .......... .......... .......... .......... .......... 20% 54.6M 0s
+1534781021,,ui,message,    amazon-ebs:   1750K .......... .......... .......... .......... .......... 20% 65.4M 0s
+1534781021,,ui,message,    amazon-ebs:   1800K .......... .......... .......... .......... .......... 21% 64.3M 0s
+1534781021,,ui,message,    amazon-ebs:   1850K .......... .......... .......... .......... .......... 21% 64.8M 0s
+1534781021,,ui,message,    amazon-ebs:   1900K .......... .......... .......... .......... .......... 22% 51.7M 0s
+1534781021,,ui,message,    amazon-ebs:   1950K .......... .......... .......... .......... .......... 23% 65.1M 0s
+1534781021,,ui,message,    amazon-ebs:   2000K .......... .......... .......... .......... .......... 23% 66.9M 0s
+1534781021,,ui,message,    amazon-ebs:   2050K .......... .......... .......... .......... .......... 24% 71.0M 0s
+1534781021,,ui,message,    amazon-ebs:   2100K .......... .......... .......... .......... .......... 24% 69.5M 0s
+1534781021,,ui,message,    amazon-ebs:   2150K .......... .......... .......... .......... .......... 25% 69.9M 0s
+1534781021,,ui,message,    amazon-ebs:   2200K .......... .......... .......... .......... .......... 26% 60.1M 0s
+1534781021,,ui,message,    amazon-ebs:   2250K .......... .......... .......... .......... .......... 26% 67.4M 0s
+1534781021,,ui,message,    amazon-ebs:   2300K .......... .......... .......... .......... .......... 27% 50.4M 0s
+1534781021,,ui,message,    amazon-ebs:   2350K .......... .......... .......... .......... .......... 27% 63.9M 0s
+1534781021,,ui,message,    amazon-ebs:   2400K .......... .......... .......... .......... .......... 28% 64.6M 0s
+1534781021,,ui,message,    amazon-ebs:   2450K .......... .......... .......... .......... .......... 28% 71.4M 0s
+1534781021,,ui,message,    amazon-ebs:   2500K .......... .......... .......... .......... .......... 29% 59.9M 0s
+1534781021,,ui,message,    amazon-ebs:   2550K .......... .......... .......... .......... .......... 30% 67.4M 0s
+1534781021,,ui,message,    amazon-ebs:   2600K .......... .......... .......... .......... .......... 30% 77.3M 0s
+1534781021,,ui,message,    amazon-ebs:   2650K .......... .......... .......... .......... .......... 31% 64.8M 0s
+1534781021,,ui,message,    amazon-ebs:   2700K .......... .......... .......... .......... .......... 31% 47.6M 0s
+1534781021,,ui,message,    amazon-ebs:   2750K .......... .......... .......... .......... .......... 32% 68.4M 0s
+1534781021,,ui,message,    amazon-ebs:   2800K .......... .......... .......... .......... .......... 32% 65.4M 0s
+1534781021,,ui,message,    amazon-ebs:   2850K .......... .......... .......... .......... .......... 33% 70.5M 0s
+1534781021,,ui,message,    amazon-ebs:   2900K .......... .......... .......... .......... .......... 34% 62.3M 0s
+1534781021,,ui,message,    amazon-ebs:   2950K .......... .......... .......... .......... .......... 34% 57.1M 0s
+1534781021,,ui,message,    amazon-ebs:   3000K .......... .......... .......... .......... .......... 35% 68.6M 0s
+1534781021,,ui,message,    amazon-ebs:   3050K .......... .......... .......... .......... .......... 35% 69.3M 0s
+1534781021,,ui,message,    amazon-ebs:   3100K .......... .......... .......... .......... .......... 36% 49.3M 0s
+1534781021,,ui,message,    amazon-ebs:   3150K .......... .......... .......... .......... .......... 37% 68.1M 0s
+1534781021,,ui,message,    amazon-ebs:   3200K .......... .......... .......... .......... .......... 37% 64.0M 0s
+1534781021,,ui,message,    amazon-ebs:   3250K .......... .......... .......... .......... .......... 38% 66.0M 0s
+1534781021,,ui,message,    amazon-ebs:   3300K .......... .......... .......... .......... .......... 38% 60.6M 0s
+1534781021,,ui,message,    amazon-ebs:   3350K .......... .......... .......... .......... .......... 39% 56.0M 0s
+1534781021,,ui,message,    amazon-ebs:   3400K .......... .......... .......... .......... .......... 39% 66.2M 0s
+1534781021,,ui,message,    amazon-ebs:   3450K .......... .......... .......... .......... .......... 40% 57.3M 0s
+1534781021,,ui,message,    amazon-ebs:   3500K .......... .......... .......... .......... .......... 41% 47.0M 0s
+1534781021,,ui,message,    amazon-ebs:   3550K .......... .......... .......... .......... .......... 41% 67.0M 0s
+1534781021,,ui,message,    amazon-ebs:   3600K .......... .......... .......... .......... .......... 42% 73.7M 0s
+1534781021,,ui,message,    amazon-ebs:   3650K .......... .......... .......... .......... .......... 42% 64.1M 0s
+1534781021,,ui,message,    amazon-ebs:   3700K .......... .......... .......... .......... .......... 43% 65.2M 0s
+1534781021,,ui,message,    amazon-ebs:   3750K .......... .......... .......... .......... .......... 43% 72.7M 0s
+1534781021,,ui,message,    amazon-ebs:   3800K .......... .......... .......... .......... .......... 44% 63.0M 0s
+1534781021,,ui,message,    amazon-ebs:   3850K .......... .......... .......... .......... .......... 45% 60.5M 0s
+1534781021,,ui,message,    amazon-ebs:   3900K .......... .......... .......... .......... .......... 45% 52.3M 0s
+1534781021,,ui,message,    amazon-ebs:   3950K .......... .......... .......... .......... .......... 46% 66.1M 0s
+1534781021,,ui,message,    amazon-ebs:   4000K .......... .......... .......... .......... .......... 46% 68.8M 0s
+1534781021,,ui,message,    amazon-ebs:   4050K .......... .......... .......... .......... .......... 47% 67.9M 0s
+1534781021,,ui,message,    amazon-ebs:   4100K .......... .......... .......... .......... .......... 48% 70.6M 0s
+1534781021,,ui,message,    amazon-ebs:   4150K .......... .......... .......... .......... .......... 48% 67.6M 0s
+1534781021,,ui,message,    amazon-ebs:   4200K .......... .......... .......... .......... .......... 49% 62.2M 0s
+1534781021,,ui,message,    amazon-ebs:   4250K .......... .......... .......... .......... .......... 49% 52.3M 0s
+1534781021,,ui,message,    amazon-ebs:   4300K .......... .......... .......... .......... .......... 50% 50.6M 0s
+1534781021,,ui,message,    amazon-ebs:   4350K .......... .......... .......... .......... .......... 50% 67.6M 0s
+1534781021,,ui,message,    amazon-ebs:   4400K .......... .......... .......... .......... .......... 51% 66.5M 0s
+1534781021,,ui,message,    amazon-ebs:   4450K .......... .......... .......... .......... .......... 52% 61.0M 0s
+1534781021,,ui,message,    amazon-ebs:   4500K .......... .......... .......... .......... .......... 52% 57.2M 0s
+1534781022,,ui,message,    amazon-ebs:   4550K .......... .......... .......... .......... .......... 53% 62.5M 0s
+1534781022,,ui,message,    amazon-ebs:   4600K .......... .......... .......... .......... .......... 53% 73.1M 0s
+1534781022,,ui,message,    amazon-ebs:   4650K .......... .......... .......... .......... .......... 54% 70.2M 0s
+1534781022,,ui,message,    amazon-ebs:   4700K .......... .......... .......... .......... .......... 54% 53.3M 0s
+1534781022,,ui,message,    amazon-ebs:   4750K .......... .......... .......... .......... .......... 55% 61.2M 0s
+1534781022,,ui,message,    amazon-ebs:   4800K .......... .......... .......... .......... .......... 56% 67.0M 0s
+1534781022,,ui,message,    amazon-ebs:   4850K .......... .......... .......... .......... .......... 56% 67.5M 0s
+1534781022,,ui,message,    amazon-ebs:   4900K .......... .......... .......... .......... .......... 57% 67.3M 0s
+1534781022,,ui,message,    amazon-ebs:   4950K .......... .......... .......... .......... .......... 57% 69.3M 0s
+1534781022,,ui,message,    amazon-ebs:   5000K .......... .......... .......... .......... .......... 58% 62.8M 0s
+1534781022,,ui,message,    amazon-ebs:   5050K .......... .......... .......... .......... .......... 59% 69.9M 0s
+1534781022,,ui,message,    amazon-ebs:   5100K .......... .......... .......... .......... .......... 59% 51.0M 0s
+1534781022,,ui,message,    amazon-ebs:   5150K .......... .......... .......... .......... .......... 60% 68.2M 0s
+1534781022,,ui,message,    amazon-ebs:   5200K .......... .......... .......... .......... .......... 60% 65.9M 0s
+1534781022,,ui,message,    amazon-ebs:   5250K .......... .......... .......... .......... .......... 61% 69.3M 0s
+1534781022,,ui,message,    amazon-ebs:   5300K .......... .......... .......... .......... .......... 61% 61.2M 0s
+1534781022,,ui,message,    amazon-ebs:   5350K .......... .......... .......... .......... .......... 62% 70.0M 0s
+1534781022,,ui,message,    amazon-ebs:   5400K .......... .......... .......... .......... .......... 63% 66.4M 0s
+1534781022,,ui,message,    amazon-ebs:   5450K .......... .......... .......... .......... .......... 63% 67.5M 0s
+1534781022,,ui,message,    amazon-ebs:   5500K .......... .......... .......... .......... .......... 64% 51.9M 0s
+1534781022,,ui,message,    amazon-ebs:   5550K .......... .......... .......... .......... .......... 64% 71.9M 0s
+1534781022,,ui,message,    amazon-ebs:   5600K .......... .......... .......... .......... .......... 65% 65.6M 0s
+1534781022,,ui,message,    amazon-ebs:   5650K .......... .......... .......... .......... .......... 65% 64.9M 0s
+1534781022,,ui,message,    amazon-ebs:   5700K .......... .......... .......... .......... .......... 66% 64.1M 0s
+1534781022,,ui,message,    amazon-ebs:   5750K .......... .......... .......... .......... .......... 67% 54.2M 0s
+1534781022,,ui,message,    amazon-ebs:   5800K .......... .......... .......... .......... .......... 67% 78.0M 0s
+1534781022,,ui,message,    amazon-ebs:   5850K .......... .......... .......... .......... .......... 68% 65.4M 0s
+1534781022,,ui,message,    amazon-ebs:   5900K .......... .......... .......... .......... .......... 68% 53.9M 0s
+1534781022,,ui,message,    amazon-ebs:   5950K .......... .......... .......... .......... .......... 69% 58.2M 0s
+1534781022,,ui,message,    amazon-ebs:   6000K .......... .......... .......... .......... .......... 70% 67.3M 0s
+1534781022,,ui,message,    amazon-ebs:   6050K .......... .......... .......... .......... .......... 70% 67.8M 0s
+1534781022,,ui,message,    amazon-ebs:   6100K .......... .......... .......... .......... .......... 71% 62.1M 0s
+1534781022,,ui,message,    amazon-ebs:   6150K .......... .......... .......... .......... .......... 71% 63.4M 0s
+1534781022,,ui,message,    amazon-ebs:   6200K .......... .......... .......... .......... .......... 72% 63.2M 0s
+1534781022,,ui,message,    amazon-ebs:   6250K .......... .......... .......... .......... .......... 72% 67.2M 0s
+1534781022,,ui,message,    amazon-ebs:   6300K .......... .......... .......... .......... .......... 73% 46.8M 0s
+1534781022,,ui,message,    amazon-ebs:   6350K .......... .......... .......... .......... .......... 74% 64.3M 0s
+1534781022,,ui,message,    amazon-ebs:   6400K .......... .......... .......... .......... .......... 74% 60.7M 0s
+1534781022,,ui,message,    amazon-ebs:   6450K .......... .......... .......... .......... .......... 75% 63.7M 0s
+1534781022,,ui,message,    amazon-ebs:   6500K .......... .......... .......... .......... .......... 75% 69.3M 0s
+1534781022,,ui,message,    amazon-ebs:   6550K .......... .......... .......... .......... .......... 76% 67.4M 0s
+1534781022,,ui,message,    amazon-ebs:   6600K .......... .......... .......... .......... .......... 76% 60.9M 0s
+1534781022,,ui,message,    amazon-ebs:   6650K .......... .......... .......... .......... .......... 77% 62.9M 0s
+1534781022,,ui,message,    amazon-ebs:   6700K .......... .......... .......... .......... .......... 78% 50.7M 0s
+1534781022,,ui,message,    amazon-ebs:   6750K .......... .......... .......... .......... .......... 78% 61.7M 0s
+1534781022,,ui,message,    amazon-ebs:   6800K .......... .......... .......... .......... .......... 79% 69.2M 0s
+1534781022,,ui,message,    amazon-ebs:   6850K .......... .......... .......... .......... .......... 79% 68.0M 0s
+1534781022,,ui,message,    amazon-ebs: Archive:  gh-pages.zip
+1534781022,,ui,message,    amazon-ebs: e409d012b1dd6ae4d201471342a5da4cfea7961d
+1534781022,,ui,message,    amazon-ebs:    creating: startbootstrap-coming-soon-gh-pages/
+1534781022,,ui,message,    amazon-ebs:   6900K .......... .......... .......... .......... .......... 80% 63.4M 0s
+1534781022,,ui,message,    amazon-ebs:   6950K .......... .......... .......... .......... .......... 81% 65.5M 0s
+1534781022,,ui,message,    amazon-ebs:   7000K .......... .......... .......... .......... .......... 81% 63.3M 0s
+1534781022,,ui,message,    amazon-ebs:  extracting: startbootstrap-coming-soon-gh-pages/.gitignore
+1534781022,,ui,message,    amazon-ebs:   7050K .......... .......... .......... .......... .......... 82% 58.7M 0s
+1534781022,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/.travis.yml
+1534781022,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/LICENSE
+1534781022,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/README.md
+1534781022,,ui,message,    amazon-ebs:    creating: startbootstrap-coming-soon-gh-pages/css/
+1534781022,,ui,message,    amazon-ebs:   7100K .......... .......... .......... .......... .......... 82% 51.7M 0s
+1534781022,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/css/coming-soon.css
+1534781022,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/css/coming-soon.min.css
+1534781022,,ui,message,    amazon-ebs:   7150K .......... .......... .......... .......... .......... 83% 64.5M 0s
+1534781022,,ui,message,    amazon-ebs:   7200K .......... .......... .......... .......... .......... 83% 71.2M 0s
+1534781023,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/gulpfile.js
+1534781023,,ui,message,    amazon-ebs:    creating: startbootstrap-coming-soon-gh-pages/img/
+1534781023,,ui,message,    amazon-ebs:   7250K .......... .......... .......... .......... .......... 84% 67.3M 0s
+1534781023,,ui,message,    amazon-ebs:   7300K .......... .......... .......... .......... .......... 85% 65.7M 0s
+1534781023,,ui,message,    amazon-ebs:   7350K .......... .......... .......... .......... .......... 85% 67.1M 0s
+1534781023,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/img/bg-mobile-fallback.jpg
+1534781023,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/index.html
+1534781023,,ui,message,    amazon-ebs:    creating: startbootstrap-coming-soon-gh-pages/js/
+1534781023,,ui,message,    amazon-ebs:   7400K .......... .......... .......... .......... .......... 86% 65.0M 0s
+1534781023,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/js/coming-soon.js
+1534781023,,ui,message,    amazon-ebs:  extracting: startbootstrap-coming-soon-gh-pages/js/coming-soon.min.js
+1534781023,,ui,message,    amazon-ebs:   7450K .......... .......... .......... .......... .......... 86% 62.3M 0s
+1534781023,,ui,message,    amazon-ebs:    creating: startbootstrap-coming-soon-gh-pages/mp4/
+1534781023,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/mp4/bg.mp4
+1534781023,,ui,message,    amazon-ebs:   7500K .......... .......... .......... .......... .......... 87% 51.5M 0s
+1534781023,,ui,message,    amazon-ebs:   7550K .......... .......... .......... .......... .......... 87% 68.5M 0s
+1534781023,,ui,message,    amazon-ebs:   7600K .......... .......... .......... .......... .......... 88% 63.8M 0s
+1534781023,,ui,message,    amazon-ebs:   7650K .......... .......... .......... .......... .......... 89% 69.3M 0s
+1534781023,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/package-lock.json
+1534781023,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/package.json
+1534781023,,ui,message,    amazon-ebs:   7700K .......... .......... .......... .......... .......... 89% 59.2M 0s
+1534781023,,ui,message,    amazon-ebs:   7750K .......... .......... .......... .......... .......... 90% 71.2M 0s
+1534781023,,ui,message,    amazon-ebs:    creating: startbootstrap-coming-soon-gh-pages/scss/
+1534781023,,ui,message,    amazon-ebs:   7800K .......... .......... .......... .......... .......... 90% 63.5M 0s
+1534781023,,ui,message,    amazon-ebs:   7850K .......... .......... .......... .......... .......... 91% 68.7M 0s
+1534781023,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/scss/_bootstrap-overrides.scss
+1534781023,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/scss/_global.scss
+1534781023,,ui,message,    amazon-ebs:   7900K .......... .......... .......... .......... .......... 92% 51.2M 0s
+1534781023,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/scss/_masthead.scss
+1534781023,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/scss/_mixins.scss
+1534781023,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/scss/_social.scss
+1534781023,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/scss/_variables.scss
+1534781023,,ui,message,    amazon-ebs:   7950K .......... .......... .......... .......... .......... 92% 68.8M 0s
+1534781023,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/scss/coming-soon.scss
+1534781023,,ui,message,    amazon-ebs:    creating: startbootstrap-coming-soon-gh-pages/vendor/
+1534781023,,ui,message,    amazon-ebs:    creating: startbootstrap-coming-soon-gh-pages/vendor/bootstrap/
+1534781023,,ui,message,    amazon-ebs:    creating: startbootstrap-coming-soon-gh-pages/vendor/bootstrap/css/
+1534781023,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/bootstrap/css/bootstrap-grid.css
+1534781023,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/bootstrap/css/bootstrap-grid.css.map
+1534781023,,ui,message,    amazon-ebs:   8000K .......... .......... .......... .......... .......... 93% 64.9M 0s
+1534781023,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/bootstrap/css/bootstrap-grid.min.css
+1534781023,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/bootstrap/css/bootstrap-grid.min.css.map
+1534781023,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/bootstrap/css/bootstrap-reboot.css
+1534781023,,ui,message,    amazon-ebs:   8050K .......... .......... .......... .......... .......... 93% 64.8M 0s
+1534781023,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/bootstrap/css/bootstrap-reboot.css.map
+1534781023,,ui,message,    amazon-ebs:   8100K .......... .......... .......... .......... .......... 94% 64.0M 0s
+1534781023,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/bootstrap/css/bootstrap-reboot.min.css
+1534781023,,ui,message,    amazon-ebs:   8150K .......... .......... .......... .......... .......... 94% 64.5M 0s
+1534781023,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/bootstrap/css/bootstrap-reboot.min.css.map
+1534781023,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/bootstrap/css/bootstrap.css
+1534781024,,ui,message,    amazon-ebs:   8200K .......... .......... .......... .......... .......... 95% 67.3M 0s
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/bootstrap/css/bootstrap.css.map
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/bootstrap/css/bootstrap.min.css
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/bootstrap/css/bootstrap.min.css.map
+1534781024,,ui,message,    amazon-ebs:   8250K .......... .......... .......... .......... .......... 96% 62.9M 0s
+1534781024,,ui,message,    amazon-ebs:   8300K .......... .......... .......... .......... .......... 96% 48.5M 0s
+1534781024,,ui,message,    amazon-ebs:    creating: startbootstrap-coming-soon-gh-pages/vendor/bootstrap/js/
+1534781024,,ui,message,    amazon-ebs:   8350K .......... .......... .......... .......... .......... 97% 65.4M 0s
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/bootstrap/js/bootstrap.bundle.js
+1534781024,,ui,message,    amazon-ebs:   8400K .......... .......... .......... .......... .......... 97% 63.6M 0s
+1534781024,,ui,message,    amazon-ebs:   8450K .......... .......... .......... .......... .......... 98% 63.8M 0s
+1534781024,,ui,message,    amazon-ebs:   8500K .......... .......... .......... .......... .......... 98% 63.9M 0s
+1534781024,,ui,message,    amazon-ebs:   8550K .......... .......... .......... .......... .......... 99% 68.4M 0s
+1534781024,,ui,message,    amazon-ebs:   8600K .......... .......... .......... ........             100% 84.8M=0.1s
+1534781024,,ui,message,    amazon-ebs:
+1534781024,,ui,message,    amazon-ebs: 2018-08-20 16:03:39 (59.4 MB/s) - ‘gh-pages.zip’ saved [8846282/8846282]
+1534781024,,ui,message,    amazon-ebs:
+1534781024,,ui,message,    amazon-ebs: cp: cannot stat ‘gh-pages/*’: No such file or directory
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/bootstrap/js/bootstrap.bundle.js.map
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js.map
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/bootstrap/js/bootstrap.js
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/bootstrap/js/bootstrap.js.map
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/bootstrap/js/bootstrap.min.js
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/bootstrap/js/bootstrap.min.js.map
+1534781024,,ui,message,    amazon-ebs:    creating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/
+1534781024,,ui,message,    amazon-ebs:    creating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/css/
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/css/font-awesome.css
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/css/font-awesome.css.map
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/css/font-awesome.min.css
+1534781024,,ui,message,    amazon-ebs:    creating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/fonts/
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/fonts/FontAwesome.otf
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/fonts/fontawesome-webfont.eot
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/fonts/fontawesome-webfont.svg
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/fonts/fontawesome-webfont.ttf
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/fonts/fontawesome-webfont.woff
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/fonts/fontawesome-webfont.woff2
+1534781024,,ui,message,    amazon-ebs:    creating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/less/
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/less/animated.less
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/less/bordered-pulled.less
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/less/core.less
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/less/fixed-width.less
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/less/font-awesome.less
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/less/icons.less
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/less/larger.less
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/less/list.less
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/less/mixins.less
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/less/path.less
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/less/rotated-flipped.less
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/less/screen-reader.less
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/less/stacked.less
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/less/variables.less
+1534781024,,ui,message,    amazon-ebs:    creating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/scss/
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/scss/_animated.scss
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/scss/_bordered-pulled.scss
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/scss/_core.scss
+1534781024,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/scss/_fixed-width.scss
+1534781025,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/scss/_icons.scss
+1534781025,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/scss/_larger.scss
+1534781025,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/scss/_list.scss
+1534781025,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/scss/_mixins.scss
+1534781025,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/scss/_path.scss
+1534781025,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/scss/_rotated-flipped.scss
+1534781025,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/scss/_screen-reader.scss
+1534781025,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/scss/_stacked.scss
+1534781025,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/scss/_variables.scss
+1534781025,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/font-awesome/scss/font-awesome.scss
+1534781025,,ui,message,    amazon-ebs:    creating: startbootstrap-coming-soon-gh-pages/vendor/jquery/
+1534781025,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/jquery/jquery.js
+1534781025,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/jquery/jquery.min.js
+1534781025,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/jquery/jquery.min.map
+1534781025,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/jquery/jquery.slim.js
+1534781025,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/jquery/jquery.slim.min.js
+1534781025,,ui,message,    amazon-ebs:   inflating: startbootstrap-coming-soon-gh-pages/vendor/jquery/jquery.slim.min.map
+1534781025,,ui,say,==> amazon-ebs: Terminating the source AWS instance...
+1534781091,,ui,say,==> amazon-ebs: Cleaning up any extra volumes...
+1534781091,,ui,say,==> amazon-ebs: No volumes to clean up%!(PACKER_COMMA) skipping
+1534781091,,ui,say,==> amazon-ebs: Deleting temporary security group...
+1534781092,,ui,say,==> amazon-ebs: Deleting temporary keypair...
+1534781092,,ui,error,Build 'amazon-ebs' errored: Script exited with non-zero exit status: 1
+1534781092,,error-count,1
+1534781092,,ui,error,\n==> Some builds didn't complete successfully and had errors:
+1534781092,amazon-ebs,error,Script exited with non-zero exit status: 1
+1534781092,,ui,error,--> amazon-ebs: Script exited with non-zero exit status: 1
+1534781092,,ui,say,\n==> Builds finished but no artifacts were created.
